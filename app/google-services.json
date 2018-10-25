@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "420508804644",
+    "firebase_url": "https://catch-a-ride-c94c5.firebaseio.com",
+    "project_id": "catch-a-ride-c94c5",
+    "storage_bucket": "catch-a-ride-c94c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420508804644:android:098b706968ee79e4",
+        "android_client_info": {
+          "package_name": "com.example.samantha.catch_a_ride"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420508804644-rk18ccb87puga6q2phffq1jrestu46au.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.samantha.catch_a_ride",
+            "certificate_hash": "b7b935afd114fdc94ef711de0f509d037bb9b7e2"
+          }
+        },
+        {
+          "client_id": "420508804644-tp2ssa8cdju2cee0rpdlf0rd369a2ks2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHvZDtmPXiWXypxeD-BvNQozd4aK7eVdo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420508804644-tp2ssa8cdju2cee0rpdlf0rd369a2ks2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
