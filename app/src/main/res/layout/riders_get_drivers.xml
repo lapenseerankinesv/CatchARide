@@ -10,14 +10,28 @@
         layout="@layout/toolbar"
         />
 
-    <TextView
+    <ListView
         android:id="@+id/driversList"
+        android:layout_width="match_parent"
+        android:layout_height="506dp"
+        android:layout_below="@+id/rgdToolbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:id="@+id/drivers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="64dp"
-        android:text="TextView" />
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="66dp"
+        android:text="No drivers currently available."
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 </RelativeLayout>

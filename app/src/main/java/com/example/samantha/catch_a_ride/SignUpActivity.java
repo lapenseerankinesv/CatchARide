@@ -77,9 +77,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     startActivity(intent);
                 } else {
                     if(task.getException() instanceof FirebaseAuthUserCollisionException) {
-                        Toast.makeText(getApplicationContext(), "An account with this email already exists.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "An account with this email already exists.", Toast.LENGTH_LONG).show();
                     } else {
-                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
 }               }
             }
         });

@@ -1,36 +1,52 @@
 <resources>
     <string name="app_name">Catch-A-Ride</string>
-    <string name="hello">Hello, !</string>
-    <string name="ride_drive">Are you riding or driving today?</string>
-    <string name="switch_type">Switch Riding/Driving</string>
-    <string name="driving">Driving</string>
-    <string name="riding">Riding</string>
-    <string name="login">Login</string>
-    <string name="sign_out_here">Not you? Sign Out Here</string>
-    <string name="logout">Logout</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="sign_up">Sign Up</string>
-    <string name="sign_up_screen">Enter an email and password to create an account.</string>
-    <string name="no_account">Don\'t have an account? Sign up here.</string>
-    <string name="has_account">Already have an account? Log in here.</string>
-    <string name="logo_credit">Created my free logo at LogoMakr.com</string>
-    <string name="page_not_done">This page has not yet been implemented.</string>
-    <string name="profile">Profile</string>
-    <string name="name">Name:</string>
-    <string name="phone_number">Phone Number:</string>
-    <string name="payment">Payment Type:</string>
-    <string name="cont">Continue</string>
-    <string name="save">Save</string>
-    <string name="drivers">Drivers Available</string>
     <string name="available">Are you offering rides now?</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
-    <string name="edit_name">Change Name:</string>s
+    <string name="back">Back</string>
+    <string name="cash">Cash</string>
+    <string name="cont">Continue</string>
+    <string name="credit">Credit</string>
+    <string name="debit">Debit</string>
+    <string name="dest">Destination:</string>
+    <string name="driver">Driver:</string>
+    <string name="drivers">Drivers Available</string>
+    <string name="driving">Driving</string>
+    <string name="edit_name">Change Name:</string>
     <string name="edit_number">Change Phone Number:</string>
     <string name="edit_payment">Change Payment Type</string>
     <string name="edit_profile">Edit Profile</string>
-    <string name="back">Back</string>
+    <string name="email">Email</string>
+    <string name="enter_dest">Enter your destination:</string>
+    <string name="enter_start">Enter your starting point:</string>
+    <string name="extra">Extra Info:</string>
+    <string name="has_account">Already have an account? Log in here.</string>
+    <string name="login">Login</string>
+    <string name="logo_credit">Created my free logo at LogoMakr.com</string>
+    <string name="logout">Logout</string>
+    <string name="name">Name:</string>
+    <string name="new_driver">Find Another Driver</string>
+    <string name="no">No</string>
+    <string name="no_account">Don\'t have an account? Sign up here.</string>
+    <string name="no_current">No current ride requests.</string>
+    <string name="optional">Extra information:</string>
+    <string name="page_not_done">This page has not yet been implemented.</string>
+    <string name="password">Password</string>
+    <string name="payment">Payment Type:</string>
+    <string name="phone_number">Phone Number:</string>
+    <string name="profile">Profile</string>
+    <string name="ride_drive">Are you riding or driving today?</string>
+    <string name="ride_requests">Ride Requests:</string>
+    <string name="riding">Riding</string>
+    <string name="save">Save</string>
+    <string name="select_driver">Select Driver</string>
+    <string name="send">Send Request</string>
+    <string name="sign_out_here">Not you? Sign Out Here</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_screen">Enter an email and password to create an account.</string>
+    <string name="start">Start point:</string>
+    <string name="switch_type">Switch Riding/Driving</string>
+    <string name="venmo">Venmo</string>
+    <string name="waiting">Waiting for Driver\'s Response</string>
+    <string name="yes">Yes</string>
 
     <array name="payment_types">
         <item>-Select Payment Type-</item>
@@ -38,6 +54,17 @@
         <item>Credit</item>
         <item>Debit</item>
         <item>Venmo</item>
+        <item>Cash/Credit</item>
+        <item>Cash/Debit</item>
+        <item>Cash/Venmo</item>
+        <item>Credit/Debit</item>
+        <item>Credit/Venmo</item>
+        <item>Debit/Venmo</item>
+        <item>Cash/Credit/Debit</item>
+        <item>Cash/Credit/Venmo</item>
+        <item>Cash/Debit/Venmo</item>
+        <item>Credit/Debit/Venmo</item>
+        <item>Cash/Credit/Debit/Venmo</item>
     </array>
 
 </resources>

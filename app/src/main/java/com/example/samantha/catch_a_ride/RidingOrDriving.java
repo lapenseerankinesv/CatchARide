@@ -33,11 +33,9 @@ public class RidingOrDriving extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         switch(view.getId()) {
             case R.id.ridingButton:
-                finish();
                 startActivity(new Intent(this, RidersGetDrivers.class));
                 break;
             case R.id.drivingButton:
-                finish();
                 startActivity(new Intent(this, DriversAvailable.class));
                 break;
         }

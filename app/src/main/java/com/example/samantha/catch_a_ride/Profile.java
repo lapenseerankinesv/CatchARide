@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,16 +21,19 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Profile extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
-    DatabaseReference databaseUser;
+    DatabaseReference databaseUsers;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    User current;
     String id;
+    User currentUser;
+    TextView userName, userPaymentMethod, userPhoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,39 +44,17 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("User Profile");
 
+        userName = (TextView) findViewById(R.id.profileDisplayName);
+        userPaymentMethod = (TextView) findViewById(R.id.profileDisplayPayment);
+        userPhoneNumber = (TextView) findViewById(R.id.profileDisplayPhoneNumber);
+
         mAuth = FirebaseAuth.getInstance();
         id = user.getUid();
-
-        current = new User("temp", "temp", "temp", "temp");
 
         findViewById(R.id.continueButton).setOnClickListener(this);
         findViewById(R.id.editProfileButton).setOnClickListener(this);
 
-        TextView textViewName = (TextView) findViewById(R.id.profileDisplayName);
-        TextView textViewNumber = (TextView) findViewById(R.id.profileDisplayPhoneNumber);
-        TextView textViewPayment = (TextView) findViewById(R.id.profileDisplayPayment);
-        databaseUser = FirebaseDatabase.getInstance().getReference("users");
-
-        /*databaseUser.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                    User temp = userSnapshot.getValue(User.class);
-                    if (temp.getUserID().equals(id)) {
-                        current = temp;
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(), "Read failed: " + databaseError.getCode(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        textViewName.setText(current.getUserName());
-        textViewNumber.setText(current.getUserPhoneNumber());
-        textViewPayment.setText(current.getUserPaymentType());*/
-
+        databaseUsers = FirebaseDatabase.getInstance().getReference().child("users").child(id);
     }
 
     @Override
@@ -81,6 +64,22 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
             finish();
             startActivity(new Intent(this, MainActivity.class));
         }
+
+        databaseUsers.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User temp = dataSnapshot.getValue(User.class);
+                currentUser = temp;
+                userName.setText(temp.getUserName());
+                userPaymentMethod.setText(temp.getUserPaymentType());
+                userPhoneNumber.setText(temp.getUserPhoneNumber());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override

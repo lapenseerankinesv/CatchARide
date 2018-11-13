@@ -63,8 +63,8 @@ public class FirstProfileEdit extends AppCompatActivity implements View.OnClickL
             String id = user.getUid();
             String phoneNumber = temp1 + "-" + temp2 + "-" + temp3;
             User user = new User(id, name, payment, phoneNumber);
-            databaseUsers.child(id).setValue(user);
 
+            databaseUsers.child(id).setValue(user);
             Toast.makeText(this, "Data added.", Toast.LENGTH_LONG).show();
             finish();
             startActivity(new Intent(this, RidingOrDriving.class));

@@ -64,32 +64,22 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         String temp1 = num1.getText().toString().trim();
         String temp2 = num2.getText().toString().trim();
         String temp3 = num3.getText().toString().trim();
-        if (!TextUtils.isEmpty(name)) {
+        if (temp1.length() != 3 || temp2.length() != 3 || temp3.length() != 4) {
+            Toast.makeText(this, "Enter an existing phone number.", Toast.LENGTH_LONG).show();
+        } else if (TextUtils.isEmpty(name)) {
+            Toast.makeText(this, "You must enter a name.", Toast.LENGTH_LONG).show();
+        } else if (payment.equals("-Select Payment Type-")) {
+            Toast.makeText(this, "You must select a payment type.", Toast.LENGTH_LONG).show();
+        } else {
             String id = user.getUid();
             String phoneNumber = temp1 + "-" + temp2 + "-" + temp3;
-
             User user = new User(id, name, payment, phoneNumber);
+
             databaseUsers.child(id).setValue(user);
+
             Toast.makeText(this, "Data added.", Toast.LENGTH_LONG).show();
-
-        } else if (!TextUtils.isEmpty(temp1) && !TextUtils.isEmpty(temp2) && !TextUtils.isEmpty(temp3)) {
-            String id = user.getUid();
-            String phoneNumber = temp1 + "-" + temp2 + "-" + temp3;
-
-            User user = new User(id, name, payment, phoneNumber);
-            databaseUsers.child(id).setValue(user);
-            Toast.makeText(this, "Data added.", Toast.LENGTH_LONG).show();
-
-        } else if (!payment.equals("-Select Payment Type-")) {
-            String id = user.getUid();
-            String phoneNumber = temp1 + "-" + temp2 + "-" + temp3;
-
-            User user = new User(id, name, payment, phoneNumber);
-            databaseUsers.child(id).setValue(user);
-            Toast.makeText(this, "Data added.", Toast.LENGTH_LONG).show();
-        }
-        else {
-            Toast.makeText(this, "No data entered.", Toast.LENGTH_LONG).show();
+            finish();
+            startActivity(new Intent(this, Profile.class));
         }
     }
 

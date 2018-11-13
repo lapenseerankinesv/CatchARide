@@ -93,8 +93,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="135dp"
-        android:layout_marginBottom="141dp"
-        android:background="#bbbbbb"
+        android:layout_marginLeft="135dp"
+        android:layout_marginBottom="129dp"
+        android:background="#ffe267"
         android:text="@string/save" />
 
     <Spinner
@@ -103,19 +104,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/paymentLabel"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:entries="@array/payment_types" />
 
     <Button
         android:id="@+id/backFromEditsButton"
-        android:layout_width="170dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="105dp"
-        android:layout_marginRight="105dp"
-        android:layout_marginBottom="41dp"
-        android:background="#ffe267"
+        android:layout_marginEnd="-135dp"
+        android:layout_marginRight="-135dp"
+        android:layout_marginBottom="61dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toStartOf="@+id/saveEditsButton"
+        android:layout_toLeftOf="@+id/saveEditsButton"
+        android:background="#bbbbbb"
         android:text="@string/back" />
 
     <android.support.v7.widget.Toolbar
@@ -124,6 +128,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
@@ -134,8 +139,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/editPhoneNumberFirst"
+        android:layout_alignRight="@+id/editPhoneNumberFirst"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="-10dp"
+        android:layout_marginRight="-10dp"
         android:layout_marginBottom="335dp"
         android:text="-"
         android:textSize="20sp" />
@@ -145,8 +152,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/editPhoneNumberFirst"
+        android:layout_alignRight="@+id/editPhoneNumberFirst"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="-100dp"
+        android:layout_marginRight="-100dp"
         android:layout_marginBottom="335dp"
         android:text="-"
         android:textSize="20sp" />

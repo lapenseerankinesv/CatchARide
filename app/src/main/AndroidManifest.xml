@@ -22,7 +22,9 @@
         <activity android:name=".Profile" />
         <activity android:name=".DriversAvailable" />
         <activity android:name=".EditProfile" />
-        <activity android:name=".FirstProfileEdit"></activity>
+        <activity android:name=".FirstProfileEdit" />
+        <activity android:name=".MessageDriver"></activity>
+        <activity android:name=".WaitingForDriver"></activity>
     </application>
 
 </manifest>

@@ -20,4 +20,50 @@
         android:textColor="#000000"
         android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/isAvailableButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="112dp"
+        android:background="#ffe267"
+        android:text="Button" />
+
+    <ListView
+        android:id="@+id/riderListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="211dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/rideRequests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="169dp"
+        android:text="@string/ride_requests"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/currentRequests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rideRequests"
+        android:layout_alignStart="@+id/rideRequests"
+        android:layout_alignLeft="@+id/rideRequests"
+        android:text="@string/no_current"
+        android:visibility="gone"
+        />
+
 </RelativeLayout>
