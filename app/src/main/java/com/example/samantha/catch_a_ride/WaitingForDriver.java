@@ -19,7 +19,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Iterator;
 
-
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * WaitingForDriver
+ * Activity that riders go to after they have submitted a ride request. The rider
+ * can choose to go back and retract their ride request, or wait for the driver to
+ * accept or deny their request.
+ */
 public class WaitingForDriver extends AppCompatActivity implements View.OnClickListener {
 
     FirebaseAuth mAuth;
@@ -65,21 +72,33 @@ public class WaitingForDriver extends AppCompatActivity implements View.OnClickL
                 if (driver != null) {
                     driverName.setText(driver.getDriverName());
                     driverPayment.setText(driver.getDriverPaymentType());
-
+                    boolean set = false;
                     Iterator<Rider> iterator = driver.getPotentialRiders().iterator();
                     while (iterator.hasNext()) {
                         Rider temp = iterator.next();
                         if (temp.getRiderID().equals(id)) {
                             rider = temp;
+                            set = true;
                         }
                     }
 
-                    if (rider == null) {
+                    if (!set) {
                         Rider temp = driver.getCurrentRider();
-                        if (temp.getRiderID().equals(id)) {
-                            //TODO go to Ride Accepted-Rider activity
+                        if (temp == null)
+                        {
+                            Toast.makeText(WaitingForDriver.this, "Your ride request was rejected.", Toast.LENGTH_LONG).show();
+                            databaseDriver.removeEventListener(this);
+                            finish();
+                            startActivity(new Intent(WaitingForDriver.this, RidersGetDrivers.class));
+                        }
+                        else if (temp.getRiderID().equals(id)) {
+                            Intent next = new Intent(WaitingForDriver.this, RiderAccepted.class);
+                            databaseDriver.removeEventListener(this);
+                            finish();
+                            startActivity(next);
                         } else {
-                            Toast.makeText(WaitingForDriver.this, driverName + "rejected your ride request.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(WaitingForDriver.this, "Your ride request was rejected.", Toast.LENGTH_LONG).show();
+                            databaseDriver.removeEventListener(this);
                             finish();
                             startActivity(new Intent(WaitingForDriver.this, RidersGetDrivers.class));
                         }
@@ -87,6 +106,7 @@ public class WaitingForDriver extends AppCompatActivity implements View.OnClickL
                 }
                 else {
                     Toast.makeText(WaitingForDriver.this, "Your ride request was rejected.", Toast.LENGTH_LONG).show();
+                    databaseDriver.removeEventListener(this);
                     finish();
                     startActivity(new Intent(WaitingForDriver.this, RidersGetDrivers.class));
                 }

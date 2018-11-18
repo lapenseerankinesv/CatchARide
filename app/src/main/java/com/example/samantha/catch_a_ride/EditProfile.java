@@ -15,6 +15,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * EditProfile
+ * Activity that the user gets to from the Profile activity. From here they can change
+ * their name, phone number, and payment type and save it to the database. Or if they
+ * change their mind, they can go back to the Profile.
+ */
 public class EditProfile extends AppCompatActivity implements View.OnClickListener {
 
     EditText editTextName, num1, num2, num3;

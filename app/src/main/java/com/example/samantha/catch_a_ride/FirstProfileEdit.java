@@ -15,8 +15,15 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.regex.Pattern;
-
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * FirstProfileEdit
+ * Activity the user can only access immediately after they sign up for the first
+ * time. They must input their name, phone number, and select a payment type. When
+ * they hit save, all of their information is saved to the database and they are
+ * taken to the RidingOrDriving activity.
+ */
 public class FirstProfileEdit extends AppCompatActivity implements View.OnClickListener {
 
     EditText editTextName, num1, num2, num3;

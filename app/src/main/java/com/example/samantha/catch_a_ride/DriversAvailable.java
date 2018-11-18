@@ -1,7 +1,6 @@
 package com.example.samantha.catch_a_ride;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,6 +25,17 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * DriversAvailable
+ * Poorly named activity that the user can get to when they decide that they are
+ * driving. From here they can start driving, which adds their driver object to
+ * the database and makes them an available driver for riders to see. This also
+ * lets them receive and see ride requests. Then, they can choose a ride request
+ * and go to the AcceptDenyRequest Activity or stop driving, which will take them
+ * out of the list of available drivers.
+ */
 public class DriversAvailable extends AppCompatActivity implements View.OnClickListener{
 
     FirebaseAuth mAuth;
@@ -63,11 +74,59 @@ public class DriversAvailable extends AppCompatActivity implements View.OnClickL
         databaseUser = FirebaseDatabase.getInstance().getReference().child("users").child(id);
         databaseDrivers = FirebaseDatabase.getInstance().getReference().child("drivers");
 
-        availableButton.setText("Start Driving");
-        potentialRiders = new ArrayList<>();
+        listViewRiders.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(DriversAvailable.this, AcceptDenyRequest.class);
+                Rider temp = potentialRiders.get(position);
+                intent.putExtra("riderID", temp.getRiderID());
+                startActivity(intent);
+            }
+        });
 
+        potentialRiders = new ArrayList<>();
         mAuth = FirebaseAuth.getInstance();
-        isAvailable = false;
+
+        Intent last = getIntent();
+        isAvailable = last.getBooleanExtra("driving", true);
+        if (isAvailable)
+        {
+            availableButton.setText("Stop Driving");
+            currentText.setText("Now Offering Rides");
+            riderRequests.setVisibility(View.VISIBLE);
+            listViewRiders.setVisibility(View.VISIBLE);
+
+            currentDriver = databaseDrivers.child(id);
+
+            currentDriver.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    driver = dataSnapshot.getValue(Driver.class);
+                    if (driver != null) {
+                        potentialRiders = driver.getPotentialRiders();
+                        RiderList adapter = new RiderList(DriversAvailable.this, potentialRiders);
+                        listViewRiders.setAdapter(adapter);
+                        if (potentialRiders.isEmpty()) {
+                            currentRequests.setVisibility(View.VISIBLE);
+                        } else {
+                            currentRequests.setVisibility(View.GONE);
+                        }
+                    } else {
+                        potentialRiders.clear();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
+        else
+        {
+            availableButton.setText("Start Driving");
+            currentText.setText("Are you offering rides now?");
+        }
 
     }
 

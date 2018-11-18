@@ -9,14 +9,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +22,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * Profile
+ * Shows the user their profile; pulls the user data for the specific user
+ * from the database. From here the user can continue to the RidingOrDriving
+ * activity or go to EditProfile.
+ */
 public class Profile extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;

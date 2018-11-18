@@ -1,5 +1,14 @@
 package com.example.samantha.catch_a_ride;
 
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * Rider
+ * Rider object created when a ride request is sent.
+ * Information is added and the rider added to the
+ * driver object's list of potential riders or
+ * their current rider.
+ */
 public class Rider {
 
     private String riderID;

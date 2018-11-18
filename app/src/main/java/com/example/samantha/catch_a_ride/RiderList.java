@@ -10,6 +10,13 @@ import android.widget.TextView;
 
 import java.util.List;
 
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * RiderList
+ * Addaptor that allows drivers to see a list of
+ * ride requests from riders.
+ */
 public class RiderList extends ArrayAdapter {
 
     private Activity context;

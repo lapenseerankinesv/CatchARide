@@ -5,11 +5,9 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +19,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * MessageDriver
+ * After user had chosen the driver they want, this activity is where they can
+ * input their starting point, destination, and any extra information and then
+ * send it in a ride request to the driver. Or the user can choose to go back
+ * to the list of available drivers.
+ */
 public class MessageDriver extends AppCompatActivity implements View.OnClickListener {
 
     EditText enterStart, enterDest, extraInfo;

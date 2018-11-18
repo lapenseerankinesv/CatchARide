@@ -9,6 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import java.util.List;
 
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * DriverList
+ * Adaptor that allows riders to see a list of available
+ * drivers.
+ */
 public class DriverList extends ArrayAdapter<Driver> {
 
     private Activity context;

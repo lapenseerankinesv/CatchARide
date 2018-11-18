@@ -23,8 +23,11 @@
         <activity android:name=".DriversAvailable" />
         <activity android:name=".EditProfile" />
         <activity android:name=".FirstProfileEdit" />
-        <activity android:name=".MessageDriver"></activity>
-        <activity android:name=".WaitingForDriver"></activity>
+        <activity android:name=".MessageDriver" />
+        <activity android:name=".WaitingForDriver" />
+        <activity android:name=".AcceptDenyRequest" />
+        <activity android:name=".DriverAccepted" />
+        <activity android:name=".RiderAccepted"></activity>
     </application>
 
 </manifest>

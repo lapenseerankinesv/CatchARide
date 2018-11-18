@@ -10,15 +10,21 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.android.gms.tasks.OnCompleteListener;
 
-
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * SignUpActivity
+ * Activity that user go to if they don't have an account with Catch A Ride yet.
+ * If they have an account they can go back to MainActivity, if they don't they
+ * can input their info and this activity will sign them up and put them to
+ * their first profile edit.
+ */
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
     ProgressBar progressBar;

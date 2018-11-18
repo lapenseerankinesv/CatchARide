@@ -11,6 +11,14 @@ import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * RidingOrDriving
+ * Activity that is the main page of the app. From here, the user can choose
+ * to go to the list of available drivers or go to a page where they can
+ * start offering rides.
+ */
 public class RidingOrDriving extends AppCompatActivity implements View.OnClickListener {
 
     FirebaseAuth mAuth;
@@ -36,7 +44,9 @@ public class RidingOrDriving extends AppCompatActivity implements View.OnClickLi
                 startActivity(new Intent(this, RidersGetDrivers.class));
                 break;
             case R.id.drivingButton:
-                startActivity(new Intent(this, DriversAvailable.class));
+                Intent intent = new Intent(this, DriversAvailable.class);
+                intent.putExtra("driving",false);
+                startActivity(intent);
                 break;
         }
     }

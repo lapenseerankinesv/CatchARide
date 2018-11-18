@@ -14,10 +14,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.firebase.ui.auth.AuthUI;
 
-
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * MainActivity
+ * Login activity. From here an existing user can input their username and
+ * password and the app will log them in, or if they don't have an account
+ * they can go to the SignUpActivity.
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //private static final String TAG = "MainActivity";

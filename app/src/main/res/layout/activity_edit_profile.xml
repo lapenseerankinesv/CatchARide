@@ -154,8 +154,8 @@
         android:layout_alignEnd="@+id/editPhoneNumberFirst"
         android:layout_alignRight="@+id/editPhoneNumberFirst"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="-100dp"
-        android:layout_marginRight="-100dp"
+        android:layout_marginEnd="-98dp"
+        android:layout_marginRight="-98dp"
         android:layout_marginBottom="335dp"
         android:text="-"
         android:textSize="20sp" />

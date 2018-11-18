@@ -1,5 +1,13 @@
 package com.example.samantha.catch_a_ride;
 
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * User
+ * User object created when a new user signs up,
+ * information is added and then the object is
+ * pushed to the Firebase database to store user data.
+ */
 public class User {
     private String userID;
     private String userName;

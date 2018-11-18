@@ -23,6 +23,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * RidersGetDrivers
+ * Activity with the list of available drivers. User can
+ * click on a driver, which will take them to MessageDriver
+ * activity for that driver.
+ */
 public class RidersGetDrivers extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -74,7 +82,9 @@ public class RidersGetDrivers extends AppCompatActivity {
                 for(DataSnapshot driverSnapshot: dataSnapshot.getChildren())
                 {
                     Driver driver = driverSnapshot.getValue(Driver.class);
-                    driverList.add(driver);
+                    if (driver.getCurrentRider() == null) {
+                        driverList.add(driver);
+                    }
                 }
                 DriverList adapter = new DriverList(RidersGetDrivers.this, driverList);
                 listViewDrivers.setAdapter(adapter);

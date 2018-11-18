@@ -3,6 +3,13 @@ package com.example.samantha.catch_a_ride;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Author: Val Lapensée-Rankine
+ *
+ * Driver
+ * Driver object created when a driver is made available.
+ * Information is added and the driver pushed to the database.
+ */
 public class Driver {
 
     private String driverID;
