@@ -4,6 +4,7 @@
     <string name="available">Are you offering rides now?</string>
     <string name="back">Back</string>
     <string name="cash">Cash</string>
+    <string name="complete_ride">Complete Ride</string>
     <string name="cont">Continue</string>
     <string name="credit">Credit</string>
     <string name="debit">Debit</string>
@@ -35,6 +36,7 @@
     <string name="phone_number">Phone Number:</string>
     <string name="profile">Profile</string>
     <string name="reject">Reject</string>
+    <string name="ride_accepted">Your ride request was accepted.</string>
     <string name="ride_drive">Are you riding or driving today?</string>
     <string name="ride_requests">Ride Requests:</string>
     <string name="riding">Riding</string>

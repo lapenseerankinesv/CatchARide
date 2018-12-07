@@ -118,4 +118,9 @@ public class AcceptDenyRequest extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "Accept or deny request.", Toast.LENGTH_LONG).show();
+    }
 }

@@ -56,7 +56,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             return;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            editTextPassword.setError("Enter valid email address.");
+            editTextEmail.setError("Enter valid email address.");
             editTextEmail.requestFocus();
             return;
         }

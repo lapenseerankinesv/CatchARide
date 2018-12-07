@@ -38,7 +38,6 @@ public class WaitingForDriver extends AppCompatActivity implements View.OnClickL
     String driverID;
     Driver driver;
     Rider rider;
-    int riderPos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +52,6 @@ public class WaitingForDriver extends AppCompatActivity implements View.OnClickL
         Intent lastIntent = getIntent();
         driverID = lastIntent.getStringExtra("driver");
         databaseDriver = FirebaseDatabase.getInstance().getReference().child("drivers").child(driverID);
-
     }
 
     @Override
@@ -93,6 +91,7 @@ public class WaitingForDriver extends AppCompatActivity implements View.OnClickL
                         }
                         else if (temp.getRiderID().equals(id)) {
                             Intent next = new Intent(WaitingForDriver.this, RiderAccepted.class);
+                            next.putExtra("driver", driverID);
                             databaseDriver.removeEventListener(this);
                             finish();
                             startActivity(next);
@@ -128,5 +127,10 @@ public class WaitingForDriver extends AppCompatActivity implements View.OnClickL
                 startActivity(new Intent(this, RidersGetDrivers.class));
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "Waiting for driver.", Toast.LENGTH_LONG).show();
     }
 }
